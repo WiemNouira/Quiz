@@ -19,17 +19,8 @@ import com.fp.quiz.services.QuizService;
 public class UserController {
 
 	@Autowired
-    private IServiceUser userService;
-	
-	@Autowired
     private QuizService quizService;
 	
-    //@Secured({"ROLE_ADMIN", "ROLE_USER"})
-    @PreAuthorize("hasRole('USER')")
-    @GetMapping(value="/users")
-    public List<User> listUser(){
-        return userService.getAll();
-    }
     @PreAuthorize("hasRole('USER')")
     @GetMapping(value="/questions")
     public List<Question> findAll(){

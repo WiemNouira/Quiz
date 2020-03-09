@@ -25,46 +25,18 @@ public class QuizController {
     private ResponseRepository responseRepository;
     @Autowired
     private TestRepository participationRepository;
-    
-   /* 
-    @PostMapping("/addTest")
-    public Participation addTest(@RequestBody TestForm testForm){
-        System.out.println(testForm);
-        
-        int score=0;
-        List<Question> questions = new ArrayList<>();
-        
-        testForm.getReponses().forEach(  //reponses
-     
-            question -> questions.add(questionRepository.save(question))
-        );
-        questions.forEach(question -> System.out.println(question));
-        
-        Participation participation = new Participation();
-        participation.setUsername(testForm.getUsername());
-        participation.setQuestions(questions);
-        
-        return participationRepository.save(participation); //reponses
-
-        
-        
-    } */
     @PostMapping("/addParticipation")
     public Participation addParticipation(@RequestBody TestForm testForm){
         System.out.println(testForm);
         
         int score=0;
-       // List<Response> reponses = new ArrayList<>();
+
         List<Response> reponses = new ArrayList<>();
-        testForm.getReponses().forEach(  //reponses
-        		//reponseQ->questionRepository.findById(reponseQ.getId());
-        			
-        		//	if(reponseQ!=null){
+        testForm.getReponses().forEach(  
+    
         				reponseQ -> reponses.add(responseRepository.save(reponseQ))
         );
-       
-       // reponses.forEach(reponse -> System.out.println(reponse));
-        
+              
         Participation participation = new Participation();
         participation.setUsername(testForm.getUsername());
         participation.setReponses(testForm.getReponses());
