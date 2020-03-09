@@ -23,16 +23,16 @@ public class QuizApplication {
     public CommandLineRunner dataLoader() throws Exception{
         return args -> {
           List<Question> questions = new ArrayList<>();
-          Question q1 = new Question(null, "Quelle type est non primitive .", "char", "boolean", "string", "double", 2);
-          Question q2 = new Question(null, "Combien de modificateurs daccesiblite dans java?", "2", "3", "4", " 5", 3);
-          Question q3 = new Question(null, "Le type double est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", 3);
-          Question q4 = new Question(null, "Le type char est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", 2);
-          Question q5 = new Question(null, "Le type float est stocké sur quels nombre de bits?", "32", "8", "16", "  Aucun", 3);
-          Question q6 = new Question(null, "Le type long est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", 2);
-          Question q7 = new Question(null, "Le type int est stocké sur quels nombre de bits?", "32", "8", "16", "  Aucun", 3);
-          Question q8 = new Question(null, "Le type short est stocké sur quels nombre de bits?", "16", "32", "64", "  Aucun", 2);
-          Question q9 = new Question(null, "Le type double est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", 3);
-          Question q10 = new Question(null, "Le type byte est stocké sur quels nombre de bits?", "16", "8", "32", "  Aucun", 2);
+          Question q1 = new Question(null, "Quelle type est non primitive .", "char", "boolean", "String", "double", "String");
+          Question q2 = new Question(null, "Combien de modificateurs daccesiblite dans java?", "2", "3", "4", " 5", "4");
+          Question q3 = new Question(null, "Le type double est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", "64");
+          Question q4 = new Question(null, "Le type char est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", "8");
+          Question q5 = new Question(null, "Le type float est stocké sur quels nombre de bits?", "32", "8", "16", "  Aucun", "32");
+          Question q6 = new Question(null, "Le type long est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", "64");
+          Question q7 = new Question(null, "Le type int est stocké sur quels nombre de bits?", "32", "8", "16", "  Aucun", "32");
+          Question q8 = new Question(null, "Le type short est stocké sur quels nombre de bits?", "16", "32", "64", "  Aucun", "32");
+          Question q9 = new Question(null, "Le type double est stocké sur quels nombre de bits?", "64", "8", "16", "  Aucun", "64");
+          Question q10 = new Question(null, "Le type byte est stocké sur quels nombre de bits?", "16", "8", "32", "  Aucun", "8");
         
           questions.add(q1);
           questions.add(q2);
@@ -45,6 +45,8 @@ public class QuizApplication {
           questions.add(q9);
           questions.add(q10);
           questionRepository.saveAll(questions);
+          
+          
 
         };
     }

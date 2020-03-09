@@ -1,13 +1,13 @@
 package com.fp.quiz.entities;
 
-import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Data
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,13 +17,21 @@ public class Question {
     private String option2;
     private String option3;
     private String option4;
-    private int reponse;
+    private String reponse;
 	public Question() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Question(Long id, String question, String reponse) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.reponse = reponse;
+	}
+
 	public Question(Long id, String question, String option1, String option2, String option3, String option4,
-			int reponse) {
+			String reponse) {
 		super();
 		this.id = id;
 		this.question = question;
@@ -69,11 +77,18 @@ public class Question {
 	public void setOption4(String option4) {
 		this.option4 = option4;
 	}
-	public int getReponse() {
+  @JsonIgnore
+	public String getReponse() {
 		return reponse;
 	}
-	public void setReponse(int reponse) {
+	public void setReponse(String reponse) {
 		this.reponse = reponse;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
 
 }

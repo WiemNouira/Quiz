@@ -1,31 +1,52 @@
 package com.fp.quiz.entities;
 
-import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fp.quiz.entities.Role;
 
 @Entity
-@Data 
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String email;
-    private int score;
+    private String username;
+    private String password;
+    
+    
+    @OneToOne
+	private Role role;
+    
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(Long id, String name, String email, int score) {
+	
+	public User(Long id,String email, String username, String password) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		
+	}
+
+	public User(Long id, String name, String email, String username, String password, Role role) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.score = score;
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -44,13 +65,30 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getScore() {
-		return score;
+	
+	public String getUsername() {
+		return username;
 	}
-	public void setScore(int score) {
-		this.score = score;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
     
-    
-    
+ 
 }

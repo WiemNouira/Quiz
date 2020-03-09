@@ -5,12 +5,12 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.fp.quiz.entities.Participation;
-
+import com.fp.quiz.entities.Response;
 
 @CrossOrigin("*")
 @RepositoryRestResource
-@Repository("participationRepository")
-public interface TestRepository extends JpaRepository<Participation, Long> {
+@Repository("responseRepository")
+public interface ResponseRepository extends JpaRepository<Response, Long> {
 	
+	 
 }
