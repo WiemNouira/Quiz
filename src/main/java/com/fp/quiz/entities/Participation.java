@@ -12,7 +12,7 @@ import java.util.List;
 public class Participation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
+
     private Long id;
     private String username;
     private int score;

@@ -77,7 +77,7 @@ public class UserController {
         participation.setScore(score);
        System.out.println("Votre Score est:"+score);
        participationRepository.save(participation);
-       return new ResponseEntity<>(testForm.getUsername()+
+       return new ResponseEntity<>(
     		      " Your Score is " + score+"!"
     		      ,    HttpStatus.OK);   
         
