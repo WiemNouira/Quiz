@@ -2,28 +2,29 @@ package com.fp.quiz.entities;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fp.quiz.entities.Question;
+
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 public class Participation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
     private String username;
     private int score;
    
-    @OneToMany(fetch = FetchType.EAGER)  //10Questions
-    private List<Response> reponses;
+    private ArrayList<String> reponses;
  
 	public Participation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Participation(Long id, String username, int score, List<Response> reponses) {
+	public Participation(Long id, String username, int score, ArrayList<String> reponses) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -38,7 +39,7 @@ public class Participation {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	@JsonIgnore
+	
 	public String getUsername() {
 		return username;
 	}
@@ -53,13 +54,14 @@ public class Participation {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	public List<Response> getReponses() {
+
+	public ArrayList<String> getReponses() {
 		return reponses;
 	}
-	public void setReponses(List<Response> reponses) {
+
+	public void setReponses(ArrayList<String> reponses) {
 		this.reponses = reponses;
 	}
-	
 	
 	
 	

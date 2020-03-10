@@ -24,7 +24,7 @@ import com.fp.quiz.utils.AuthToken;
 @RequestMapping("/auth")
 public class AuthController {
 	
-	 @Autowired
+	    @Autowired
 	    private AuthenticationManager authenticationManager;
 
 	    @Autowired

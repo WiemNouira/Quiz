@@ -8,6 +8,6 @@ import com.fp.quiz.entities.Question;
 
 
 public interface QuizService {
-    public void addTest();
+    public void addTest(Question question);
     public List<Question> findAll();
 }

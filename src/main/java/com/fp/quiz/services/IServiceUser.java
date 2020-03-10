@@ -12,4 +12,5 @@ public interface IServiceUser {
     public User findById(Long id);
     public User finByUsername(String username);
     public User finByEmail(String email);
+    public void addUser();
 }

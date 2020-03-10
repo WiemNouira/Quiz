@@ -99,5 +99,6 @@ public class ServiceUserIMPL implements UserDetailsService, IServiceUser{
 		return user;
 		
 	}
+	 public void addUser() {}
 
 }
